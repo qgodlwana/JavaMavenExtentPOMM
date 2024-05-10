@@ -28,7 +28,7 @@ public class ProductsPage{
         Assert.assertEquals(expectedTitleFS, actualTitleFS);
         if(expectedTitleFS.equals(actualTitleFS)){
             test.log(Status.PASS, "Test passed for title verification of formal shoes");
-            //test.log(Status.PASS, test.addScreenCaptureFromPath(capture(driver))+"Test Passed");
+            test.log(Status.PASS, test.addScreenCaptureFromPath(capture(driver))+"Test Passed");
         }
         else{
             test.log(Status.FAIL,"Test failed for title verification of formal shoes");
