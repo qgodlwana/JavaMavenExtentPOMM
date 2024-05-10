@@ -29,10 +29,11 @@ public class SeleniumTest {
         ExtentSparkReporter spark = new ExtentSparkReporter("target/Spark.html");
         extent.attachReporter(spark);
         HomePage.verifyShoePortalTitle();
+        HomePage.verifyShoePageFooter();
         HomePage.click_hamburger_menu();
         HomePage.click_onlineProducts_link();
     }
-    public static String capture(WebDriver driver) throws IOException, IOException{
+    public static String capture(WebDriver driver) throws IOException{
         File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         File Dest = new File("src/../ExecImage/" + System.currentTimeMillis() + ".png");
         String errflpath = Dest.getAbsolutePath();

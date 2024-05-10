@@ -9,10 +9,18 @@ public class HomePage {
     public static String hamBurger_menu_xpath = "//*[@id=\"menuToggle\"]/input";
     public static String onlineProduct_link_xpath = "//*[@id=\"menu\"]/a[3]/li";
     public static String shoePortalTitle_xpath = "//*[@id=\"ShoePortalTitle\"]";
-    public static void verifyShoePortalTitle(){
+    public static String shoePageFooter_xpath = "//*[@id=\"CopyrightFooter\"]";
+    public static void verifyShoePortalTitle() throws InterruptedException {
+        Thread.sleep(2000);
         String expectedShoePortalTitle ="Ace Online Shoe Portal";
         String actualShoePortalTitle = driver.findElement(By.xpath(shoePortalTitle_xpath)).getText();
         Assert.assertEquals(expectedShoePortalTitle, actualShoePortalTitle);
+    }
+    public static void verifyShoePageFooter() throws InterruptedException {
+        Thread.sleep(2000);
+        String expectedShoePageFooter = "Ace Automation © All Rights Reserved 2024";
+        String actualShoePageFooter = driver.findElement(By.xpath(shoePageFooter_xpath)).getText();
+        Assert.assertEquals(expectedShoePageFooter,actualShoePageFooter);
     }
     public static void click_hamburger_menu(){
         driver.findElement(By.xpath(hamBurger_menu_xpath)).click();
