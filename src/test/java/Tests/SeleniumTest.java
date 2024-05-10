@@ -2,6 +2,7 @@ package Tests;
 
 import Pages.HomePage;
 import Pages.ProductsPage;
+import Pages.SignInPage;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
@@ -30,8 +31,6 @@ public class SeleniumTest {
         extent.attachReporter(spark);
         HomePage.verifyShoePortalTitle();
         HomePage.verifyShoePageFooter();
-        HomePage.click_hamburger_menu();
-        HomePage.click_onlineProducts_link();
     }
     public static String capture(WebDriver driver) throws IOException{
         File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
@@ -44,6 +43,10 @@ public class SeleniumTest {
     @Test
     void validateTitles_onlineProducts() throws InterruptedException, IOException {
         test = extent.createTest("validate shoe titles on products page", "This test validates that the different shoe types are correct on online products");
+        HomePage.click_hamburger_menu();
+        HomePage.click_home_menu();
+        HomePage.click_hamburger_menu();
+        HomePage.click_onlineProducts_link();
         ProductsPage.formalShoes_getTitle();
         ProductsPage.sportsShoes_getTitle();
         ProductsPage.sneakers_getTitle();
@@ -51,17 +54,37 @@ public class SeleniumTest {
     @Test
     void validFirstFormalShoeName() throws InterruptedException, IOException {
         test = extent.createTest("validate the first formal shoes", "This test validates that the name of the first formal shoe is correct on online products");
+        HomePage.click_hamburger_menu();
+        HomePage.click_onlineProducts_link();
         ProductsPage.formalShoes_dropdown_click();
     }
     @Test
     void validateFirstSportsShoeName() throws InterruptedException, IOException {
         test = extent.createTest("validate the first sports shoes", "This test validates that the name of the first sport shoe is correct on online products");
+        HomePage.click_hamburger_menu();
+        HomePage.click_home_menu();
+        HomePage.click_hamburger_menu();
+        HomePage.click_onlineProducts_link();
         ProductsPage.sportsShoes_dropdown_click();
     }
     @Test
     void validateFirstSneakerName() throws InterruptedException, IOException {
         test = extent.createTest("validate the first sneaker shoes", "This test validates that the name of the first sneaker shoe is correct on online products");
+        HomePage.click_hamburger_menu();
+        HomePage.click_home_menu();
+        HomePage.click_hamburger_menu();
+        HomePage.click_onlineProducts_link();
         ProductsPage.sneaker_dropdown_click();
+    }
+    @Test
+    void verifySignInFormIsLoaded() throws InterruptedException {
+        test = extent.createTest("user click on sign in portal menu", "The test will load the sign in form successfully");
+        HomePage.click_hamburger_menu();
+        HomePage.click_home_menu();
+        HomePage.click_hamburger_menu();
+        HomePage.click_signInPortal_menu();
+        SignInPage.verifyUsernameLabel();
+        SignInPage.verifyPasswordLabel();
     }
 
     @AfterSuite
