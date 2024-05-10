@@ -88,6 +88,7 @@ public class ProductsPage{
         }
         else{
             test.log(Status.FAIL,"Test failed");
+            test.fail(MediaEntityBuilder.createScreenCaptureFromBase64String("base64").build());
         }
     }
     public static void sneaker_dropdown_click() throws InterruptedException, IOException {
