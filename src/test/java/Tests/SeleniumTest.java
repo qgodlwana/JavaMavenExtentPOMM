@@ -25,10 +25,10 @@ public class SeleniumTest {
 
     @BeforeSuite
     public static void Setup() throws InterruptedException {
-        //System.setProperty("",System.getProperty(""));
         driver.get("https://anupdamoda.github.io/AceOnlineShoePortal/index.html");
         ExtentSparkReporter spark = new ExtentSparkReporter("target/Spark.html");
         extent.attachReporter(spark);
+        HomePage.verifyShoePortalTitle();
         HomePage.click_hamburger_menu();
         HomePage.click_onlineProducts_link();
     }

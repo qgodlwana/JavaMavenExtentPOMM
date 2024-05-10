@@ -28,7 +28,7 @@ public class ProductsPage{
         Assert.assertEquals(expectedTitleFS, actualTitleFS);
         if(expectedTitleFS.equals(actualTitleFS)){
             test.log(Status.PASS, "Test passed for title verification of formal shoes");
-            test.log(Status.PASS, test.addScreenCaptureFromPath(capture(driver))+"Test Passed");
+            //test.log(Status.PASS, test.addScreenCaptureFromPath(capture(driver))+"Test Passed");
         }
         else{
             test.log(Status.FAIL,"Test failed for title verification of formal shoes");
@@ -41,7 +41,7 @@ public class ProductsPage{
         Assert.assertEquals(expectedTitleSS, actualTitleSS);
         if(expectedTitleSS.equals(actualTitleSS)){
             test.log(Status.PASS, "Test passed for title verification of Sports shoes");
-            test.log(Status.PASS, test.addScreenCaptureFromPath(capture(driver))+"Test Passed");
+            //test.log(Status.PASS, test.addScreenCaptureFromPath(capture(driver))+"Test Passed");
         }
         else{
             test.log(Status.FAIL,"Test failed");
@@ -54,7 +54,7 @@ public class ProductsPage{
         Assert.assertEquals(expectedTitleS, actualTitleS);
         if(expectedTitleS.equals(actualTitleS)){
             test.log(Status.PASS, "Test passed for title verification of Sneakers");
-            test.log(Status.PASS, test.addScreenCaptureFromPath(capture(driver))+"Test Passed");
+            //test.log(Status.PASS, test.addScreenCaptureFromPath(capture(driver))+"Test Passed");
         }
         else{
             test.log(Status.FAIL,"Test failed");
@@ -69,7 +69,7 @@ public class ProductsPage{
         Assert.assertEquals(expectedFirstFormalShoes, actualFirstFormalShoes);
         if(expectedFirstFormalShoes.equals(actualFirstFormalShoes)){
             test.log(Status.PASS, "Test passed for title verification of Sneakers");
-            test.log(Status.PASS, test.addScreenCaptureFromPath(capture(driver))+"Test Passed");
+            //test.log(Status.PASS, test.addScreenCaptureFromPath(capture(driver))+"Test Passed");
         }
         else{
             test.log(Status.FAIL,"Test failed");
@@ -84,11 +84,11 @@ public class ProductsPage{
         Assert.assertEquals(expectedFirstSportsShoes, actualFirstSportShoes);
         if(expectedFirstSportsShoes.equals(actualFirstSportShoes)){
             test.log(Status.PASS, "Test passed for title verification of Sneakers");
-            test.log(Status.PASS, test.addScreenCaptureFromPath(capture(driver))+"Test Passed");
+            //test.log(Status.PASS, test.addScreenCaptureFromPath(capture(driver))+"Test Passed");
         }
         else{
             test.log(Status.FAIL,"Test failed");
-            test.fail(MediaEntityBuilder.createScreenCaptureFromBase64String("base64").build());
+            //test.fail(MediaEntityBuilder.createScreenCaptureFromBase64String("base64").build());
         }
     }
     public static void sneaker_dropdown_click() throws InterruptedException, IOException {
@@ -100,11 +100,11 @@ public class ProductsPage{
         Assert.assertEquals(expectedFirstSneakers, actualFirstSneaker);
         if(expectedFirstSneakers.equals(actualFirstSneaker)){
             test.log(Status.PASS, "Test passed for title verification of Sneakers");
-            test.log(Status.PASS, test.addScreenCaptureFromPath(capture(driver))+"Test Passed");
+            //test.log(Status.PASS, test.addScreenCaptureFromPath(capture(driver))+"Test Passed");
         }
         else if(false){
             test.log(Status.FAIL,"Test failed ");
-            test.fail(MediaEntityBuilder.createScreenCaptureFromBase64String("base64").build());
+            //test.fail(MediaEntityBuilder.createScreenCaptureFromBase64String("base64").build());
         }
     }
 
