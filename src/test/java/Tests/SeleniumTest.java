@@ -2,6 +2,7 @@ package Tests;
 
 import Pages.HomePage;
 import Pages.ProductsPage;
+import Pages.ShoeTypesPage;
 import Pages.SignInPage;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -98,9 +99,24 @@ public class SeleniumTest {
         SignInPage.verifyPasswordLabel();
         SignInPage.enterValidPassword();
         SignInPage.clickLoginButton();
-        SignInPage.verifyFormalShoeTypeParagraph();
-        SignInPage.verifySportShoeTypeParagraph();
-        SignInPage.verifySneakerShoeTypeParagraph();
+        ShoeTypesPage.verifyFormalShoeTypeParagraph();
+        ShoeTypesPage.verifySportShoeTypeParagraph();
+        ShoeTypesPage.verifySneakerShoeTypeParagraph();
+    }
+    @Test
+    void viewFormalShoeExclusiveCollection() throws InterruptedException{
+        test = extent.createTest("view formal shoe collection", "click here for exclusive formal shoes collection");
+        HomePage.click_hamburger_menu();
+        HomePage.click_home_menu();
+        HomePage.click_hamburger_menu();
+        HomePage.click_signInPortal_menu();
+        SignInPage.verifyUsernameLabel();
+        SignInPage.enterValidUsername();
+        SignInPage.verifyPasswordLabel();
+        SignInPage.enterValidPassword();
+        SignInPage.clickLoginButton();
+        ShoeTypesPage.clickFormalShoeExclusiveCollectionBtn();
+        ShoeTypesPage.verifyExclusiveFormalShoeName();
     }
 
     @AfterSuite
