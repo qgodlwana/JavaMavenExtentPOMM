@@ -86,6 +86,22 @@ public class SeleniumTest {
         SignInPage.verifyUsernameLabel();
         SignInPage.verifyPasswordLabel();
     }
+    @Test
+    void verifySignInSuccessful() throws InterruptedException{
+        test = extent.createTest("user sign in using valid credentials", "user must be logged in successfully after entering valid username and valid password");
+        HomePage.click_hamburger_menu();
+        HomePage.click_home_menu();
+        HomePage.click_hamburger_menu();
+        HomePage.click_signInPortal_menu();
+        SignInPage.verifyUsernameLabel();
+        SignInPage.enterValidUsername();
+        SignInPage.verifyPasswordLabel();
+        SignInPage.enterValidPassword();
+        SignInPage.clickLoginButton();
+        SignInPage.verifyFormalShoeTypeParagraph();
+        SignInPage.verifySportShoeTypeParagraph();
+        SignInPage.verifySneakerShoeTypeParagraph();
+    }
 
     @AfterSuite
     void closeBrowser(){

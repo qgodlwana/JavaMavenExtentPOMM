@@ -12,6 +12,10 @@ public class SignInPage {
     public static String passwordTxtLabel_xpath = "//*[@id=\"second_form\"]/div[2]/h4/label";
     public static String loginBtn_xpath = "//*[@id=\"second_form\"]/input";
     public static String newUserBtn_xpath = "//*[@id=\"NewRegistration\"]";
+    public static String formalShoeTypePara_xpath = "//*[@id=\"SmokeTests\"]/p";
+    public static String sportsShoeTypePara_xpath = "//*[@id=\"RegressionTests\"]/p";
+    public static String sneakerShoeTypePara_xpath = "//*[@id=\"VanguardTests\"]/p";
+
     public static void verifyUsernameLabel() throws InterruptedException {
         Thread.sleep(1000);
         String expectedUsernameLabel = "Username:";
@@ -24,7 +28,6 @@ public class SignInPage {
         String actualPasswordLabel = driver.findElement(By.xpath(passwordTxtLabel_xpath)).getText();
         Assert.assertEquals(expectedPasswordLabel, actualPasswordLabel);
     }
-
     public static void enterValidUsername(){
         driver.findElement(By.xpath(usernameTxtField_xpath)).sendKeys("sa");
     }
@@ -36,5 +39,23 @@ public class SignInPage {
     }
     public static void clickRegisterNewUserButton(){
         driver.findElement(By.xpath(newUserBtn_xpath)).click();
+    }
+    public static void verifyFormalShoeTypeParagraph() throws  InterruptedException{
+        Thread.sleep(1000);
+        String expectedFormalShoeType = "Suitable for office wear, board meetings, black tie events, cocktail parties, and even daily wear";
+        String actualFormalShoeType = driver.findElement(By.xpath(formalShoeTypePara_xpath)).getText();
+        Assert.assertEquals(expectedFormalShoeType, actualFormalShoeType);
+    }
+    public static void verifySportShoeTypeParagraph() throws InterruptedException{
+        Thread.sleep(1000);
+        String expectedSportShoeType = "Suitable for running/training, court sports, field sports, winter sports, outdoor sports, track and field";
+        String actualSportShoeType = driver.findElement(By.xpath(sportsShoeTypePara_xpath)).getText();
+        Assert.assertEquals(expectedSportShoeType, actualSportShoeType);
+    }
+    public static void verifySneakerShoeTypeParagraph() throws InterruptedException{
+        Thread.sleep(1000);
+        String expectedSneakerShoeType = "Elevated styles suitable for running, dancing, and jumping.";
+        String actualSneakerShoeType = driver.findElement(By.xpath(sneakerShoeTypePara_xpath)).getText();
+        Assert.assertEquals(expectedSneakerShoeType, actualSneakerShoeType);
     }
 }
