@@ -1,9 +1,13 @@
 package Pages;
 
+import com.aventstack.extentreports.Status;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
-import static Tests.SeleniumTest.driver;
+import java.io.IOException;
+
+import static Tests.SeleniumTest.*;
+import static Tests.SeleniumTest.test;
 
 public class ShoeTypesPage {
     public static String formalShoeTypePara_xpath = "//*[@id=\"SmokeTests\"]/p";
@@ -33,10 +37,17 @@ public class ShoeTypesPage {
     public static void clickFormalShoeExclusiveCollectionBtn() throws InterruptedException{
         driver.findElement(By.xpath(formalShoeExclusiveCollection_xpath)).click();
     }
-    public static void verifyExclusiveFormalShoeName() throws InterruptedException{
+    public static void verifyExclusiveFormalShoeName() throws InterruptedException, IOException {
         Thread.sleep(1000);
         String expectedExclusiveFormalShoeName = "   Prestigue Suede";
         String actualExclusiveFormalShoeName = driver.findElement(By.xpath(exclusiveFormalShoeName_xpath)).getText();
         Assert.assertEquals(expectedExclusiveFormalShoeName, actualExclusiveFormalShoeName);
+        if(expectedExclusiveFormalShoeName.equals(actualExclusiveFormalShoeName)){
+            test.log(Status.PASS, "Test passed for name verification of formal shoes");
+            test.log(Status.PASS, test.addScreenCaptureFromPath(capture(driver))+"Test Passed");
+        }
+        else{
+            test.log(Status.FAIL,"Test failed for name verification of formal shoes");
+        }
     }
 }

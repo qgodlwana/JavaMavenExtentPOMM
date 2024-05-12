@@ -104,7 +104,7 @@ public class SeleniumTest {
         ShoeTypesPage.verifySneakerShoeTypeParagraph();
     }
     @Test
-    void viewFormalShoeExclusiveCollection() throws InterruptedException{
+    void viewFormalShoeExclusiveCollection() throws InterruptedException, IOException {
         test = extent.createTest("view formal shoe collection", "click here for exclusive formal shoes collection");
         HomePage.click_hamburger_menu();
         HomePage.click_home_menu();
